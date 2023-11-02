@@ -2,6 +2,12 @@
 
 ### Milestone 1
 Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
+- creare sfondo 
+- creare div contenente sidebar e main content (col-4 e col-8)
+- nella sidebar mettere 4 contenitori ( mio id, notifiche, barra di ricerca, tutti i contatti)
+- nel main content suddividerlo in 3 contenitori ( nome contatto visualizzato, chat (divisa in 2 colonne), input "scrivi messaggio" con relative icone in space between)
+
+
 Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
 
 ### Milestone 2
