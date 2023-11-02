@@ -18,6 +18,7 @@ body{
     height: 100vh;
     background: var(--background);
     padding: 40px;
+
 }
 
 .sidebar{
@@ -34,12 +35,13 @@ body{
 }
 .header-main{
     background-color: var(--color-headers);
-    height: 50px;
+    height: 70px;
+    border-left: solid 1px var(--color-text-grey);
 }
 
 .chat-main{
     background-image: url(/img/mine.jpg);
-    height: calc(100% - 120px);
+    height: calc(100% - 140px);
 }
 
 li{
@@ -57,7 +59,10 @@ li{
     color: var(--color-light-icons);
 }
 
-.footer-main i{
+.footer.main{
+    height: 70px;
+}
+i{
     color: var(--color-dark-grey);
     font-size: 1.5rem;
 }
@@ -76,6 +81,27 @@ input{
     height: 40px;
     border-radius: 50%;
     background-color: white;
+   
+}
+#bell i{
     color: var(--color-notification);
+}
+
+.sent{
+
+    background-color: var(--color-sent-message);
+    padding: 10px;
+    border-radius: 10px;
+    align-content: flex-end;
+   
+}
+
+
+.received{
+
+    background-color: var(--color-white);
+    padding: 10px;
+    border-radius: 10px;
+    align-content: flex-start;
     
 }

@@ -29,8 +29,10 @@
     <div id="app">
       <main class="container border h-100">
         <div class="row h-100 flex-nowrap">
+          <!-- sidebar -->
           <div class="col-12 col-md-4 sidebar">
             <div class="row h-100 flex-column flex-nowrap">
+                <!-- header sidebar -->
               <div
                 class="col-12 header d-flex justify-content-between py-2 px-4 border-bottom"
               >
@@ -44,23 +46,29 @@
                   <i class="fa-solid fa-ellipsis-vertical px-2 last-grey"></i>
                 </div>
               </div>
+              <!-- notifiche sidebar -->
               <div class="col-12 notifications d-flex">
                 <span id="bell">
                   <i class="fa-solid fa-bell-slash fs-4 m-2"></i
                 ></span>
                 <div class="d-flex flex-column ps-2">
-                    <span>Ricevi notifiche di nuovi messaggi</span>
-                    <span class="text-decoration-underline last-grey">Attiva notifiche desktop</span>
+                  <span>Ricevi notifiche di nuovi messaggi</span>
+                  <span class="text-decoration-underline last-grey"
+                    >Attiva notifiche desktop</span
+                  >
                 </div>
-
               </div>
-              <div class="col-12">
+              <!-- ricerca -->
+              <div class="col-12 pt-1">
+
+                <i class="fa-solid fa-magnifying-glass p-2"></i>
                 <input
                   type="text"
-                  class="w-100 ps-2 m-1 border-black"
+                  class="w-75 ps-2 m-1 border-black"
                   placeholder="Cerca"
                 />
               </div>
+              <!-- contatti -->
               <div class="col-12">
                 <ul class="p-0">
                   <li
@@ -86,9 +94,41 @@
               </div>
             </div>
           </div>
+
+          <!-- main content -->
           <div class="col-12 col-md-8 p-0">
-            <div class="header-main">header main</div>
-            <div class="chat-main"></div>
+            <!-- header main content -->
+            <div class="header-main p-2 d-flex justify-content-between align-content-between">
+              <div class="d-flex flex-row ">
+                <img
+                  src="/img/avatar_1.jpg"
+                  alt="avatar-1"
+                  class="img-avatar"
+                />
+                <div class="d-flex flex-column ">
+                  <span>Michele</span>
+                  <span class="last-grey"> Ultimo accesso oggi alle 12:00</span>
+                </div>
+              </div>
+              <div class="d-flex flex-row flex-nowrap p-2">
+                <i class="fa-solid fa-magnifying-glass px-2 last-grey"></i>
+                <i class="fa-solid fa-paperclip px-2 last-grey"></i>
+                <i class="fa-solid fa-ellipsis-vertical px-2 last-grey"></i>
+              </div>
+            </div>
+            <!-- main chat -->
+            <div class="chat-main pt-3">
+                <div class="row ">
+                    <div class="col-6 d-flex flex-column ">                       
+                        <span class="received">Tutto fatto!</span>   
+                        </div>
+                        <div class="col-6 d-flex flex-column">                   
+                        <span class="sent ">Hai portato a spasso il cane?</span><br><br>
+                        <span class="sent">Ricordati di stendere i panni</span>
+                    </div>
+                </div>
+            </div>
+            <!-- main footer -->
             <div
               class="footer-main header d-flex justify-content-between p-3 align-items-center"
             >
