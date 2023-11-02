@@ -37,7 +37,7 @@ createApp({
                 {
                     id: 2,
                     name: 'Fabio',
-                    avatar: './img/avatar_2.jpg',
+                    avatar: '/img/avatar_2.jpg',
                     visible: true,
                     messages: [
                         {

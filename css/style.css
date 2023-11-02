@@ -22,10 +22,11 @@ body{
 
 .sidebar{
     background-color: var(--color-white);
+    overflow-y: auto;
 }
 .header{
     background-color: var(--color-headers);
-    height: 50px;
+    height: 70px;
 }
 .notifications{
     background-color: var(--color-notification);
@@ -38,5 +39,43 @@ body{
 
 .chat-main{
     background-image: url(/img/mine.jpg);
-    height: calc(100% - 100px);
+    height: calc(100% - 120px);
+}
+
+li{
+    list-style: none;
+}
+.img-avatar{
+    width: 50px;
+    height: 50px;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.last-grey{
+    color: var(--color-light-icons);
+}
+
+.footer-main i{
+    color: var(--color-dark-grey);
+    font-size: 1.5rem;
+}
+
+input{
+    border-radius: 10px;
+}
+
+#sending{
+   color: rgb(0, 149, 255);
+}
+   
+
+#bell{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    color: var(--color-notification);
+    
 }
