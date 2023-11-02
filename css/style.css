@@ -19,3 +19,16 @@ body{
     background: var(--background);
     padding: 40px;
 }
+
+.sidebar{
+    background-color: var(--color-white);
+}
+.header{
+    background-color: var(--color-headers);
+    height: 50px;
+}
+.notifications{
+    background-color: var(--color-notification);
+    height: 50px;
+
+}
