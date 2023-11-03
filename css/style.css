@@ -46,6 +46,7 @@ body{
 
 li{
     list-style: none;
+    cursor: pointer;
 }
 .img-avatar{
     width: 50px;
@@ -65,6 +66,7 @@ li{
 i{
     color: var(--color-dark-grey);
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 input{
@@ -92,7 +94,9 @@ input{
     background-color: var(--color-sent-message);
     padding: 10px;
     border-radius: 10px;
-    align-content: flex-end;
+    align-self: flex-end;
+    margin-bottom: 10px;
+    width: 300px;
    
 }
 
@@ -102,6 +106,10 @@ input{
     background-color: var(--color-white);
     padding: 10px;
     border-radius: 10px;
-    align-content: flex-start;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    width: 300px;
+
+
     
 }
