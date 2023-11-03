@@ -180,12 +180,25 @@ createApp({
         },
       ],
       activeIndex: 0,
+      messages :'',
     };
   },
 
   methods: {
     getActive(index){
         return this.activeIndex=index 
+    },
+    getText(messages){
+        return this.text = messages
     }
   },
+
+  addText(){    
+    const newText = {
+        date: 12,
+        messages: this.messaggio,
+        status: "received",
+    }
+    return newText
+  }
 }).mount("#app");

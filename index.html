@@ -77,12 +77,12 @@
                     <div class="d-flex flex-row"  >
                       <img
                         :src="user.avatar"
-                        alt="user.name"
+                        :alt="user.name"
                         class="img-avatar"
                       />
                       <div class="d-flex flex-column ms-2">
                         <span class="align-items-center">{{user.name}}</span>
-                        <span class="text-grey">Ultimo messaggio inviato</span>
+                        <span class="text-grey">ultimo messaggio</span>
                       </div>
                     </div>
                     <div>
@@ -108,7 +108,7 @@
                 />
                 <div class="d-flex flex-column">
                   <span>{{contacts[activeIndex].name}}</span>
-                  <span class="last-grey">ultimo accesso </span>
+                  <span class="last-grey">ultimo accesso</span>
                 </div>
               </div>
               <div class="d-flex flex-row flex-nowrap p-2">
@@ -135,12 +135,12 @@
               class="footer-main header d-flex justify-content-between p-3 align-items-center"
             >
               <i class="fa-regular fa-face-smile py-1 px-3"></i>
-              <input
+              <input name="messaggio"
                 type="text"
                 class="border-0 w-75 p-2"
-                placeholder="Scrivi un messaggio" 
+                placeholder="Scrivi un messaggio" v-model ="newText" 
               />
-              <i class="fa-regular fa-paper-plane" id="sending"></i>
+              <i class="fa-regular fa-paper-plane" id="sending" @click="addText"></i>
 
               <i class="fa-solid fa-microphone py-1 px-3"></i>
             </div>

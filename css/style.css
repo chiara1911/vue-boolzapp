@@ -24,6 +24,7 @@ body{
 .sidebar{
     background-color: var(--color-white);
     overflow-y: auto;
+
 }
 .header{
     background-color: var(--color-headers);
