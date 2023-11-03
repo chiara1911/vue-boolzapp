@@ -47,6 +47,14 @@ body{
 li{
     list-style: none;
     cursor: pointer;
+    
+}
+
+li:hover{
+    background-color: var(--color-text-grey);
+}
+.text-grey{
+    color: var(--color-dark-grey);
 }
 .img-avatar{
     width: 50px;
@@ -113,6 +121,6 @@ input{
 
     
 }
-#extra-small{
+.extra-small{
     font-size: 0.7rem;
 }
