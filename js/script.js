@@ -185,7 +185,7 @@ createApp({
 
   methods: {
     getActive(index){
-        return index ===this.activeIndex++
+        return this.activeIndex=index 
     }
   },
 }).mount("#app");
