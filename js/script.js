@@ -179,8 +179,10 @@ createApp({
           ],
         },
       ],
+      
       activeIndex: 0,
-      messages :'',
+     newText:'',
+    
     };
   },
 
@@ -188,17 +190,18 @@ createApp({
     getActive(index){
         return this.activeIndex=index 
     },
-    getText(messages){
-        return this.text = messages
-    }
+  
   },
 
   addText(){    
+
+    console.log(this.newText)
     const newText = {
         date: 12,
-        messages: this.messaggio,
-        status: "received",
+        messages: this.newText,
+        status: "received",      
     }
-    return newText
-  }
+    contacts[activeIndex].messages.push(newText)
+   this.newText =''
+  },
 }).mount("#app");

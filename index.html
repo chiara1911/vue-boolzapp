@@ -82,7 +82,7 @@
                       />
                       <div class="d-flex flex-column ms-2">
                         <span class="align-items-center">{{user.name}}</span>
-                        <span class="text-grey">ultimo messaggio</span>
+                        <span class="text-grey">Ultimo messaggio</span>
                       </div>
                     </div>
                     <div>
@@ -140,7 +140,7 @@
                 class="border-0 w-75 p-2"
                 placeholder="Scrivi un messaggio" v-model ="newText" 
               />
-              <i class="fa-regular fa-paper-plane" id="sending" @click="addText"></i>
+              <i class="fa-regular fa-paper-plane" id="sending" @click="addText" @keyup.enter = "addText"></i>
 
               <i class="fa-solid fa-microphone py-1 px-3"></i>
             </div>
