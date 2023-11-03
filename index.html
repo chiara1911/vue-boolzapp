@@ -121,10 +121,13 @@
             <div class="chat-main pt-3">
               <div class="container d-flex flex-column">
             
+                <div class="d-flex justify-content-between" :class="msg.status" v-for ="(msg,index) in contacts[activeIndex].messages">
+                  <span class="align-content-start">{{msg.message}}</span> 
+                  <span class="last-grey align-content-end align-items-bottom" id="extra-small">{{msg.date}}</span>
+                </div>
                 
-                <div class="sent"></div>
-                <div class="sent">Ricordati di stendere i panni</div>
-                <div class="received">Tutto fatto!</div>
+                  
+               
               </div>
             </div>
             <!-- main footer -->
