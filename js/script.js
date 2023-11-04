@@ -181,7 +181,7 @@ createApp({
       ],
 
       activeIndex: 0,
-      newText: '',
+      newText: "",
     };
   },
 
@@ -189,28 +189,35 @@ createApp({
     getActive(index) {
       return (this.activeIndex = index);
     },
-    searchText(){},
-    addText(){
-        const dt = luxon.DateTime;
+
+    filterContacts(){
+        const searchUser = contacts.forEach(el => {
+           el= name.toLowerCase;
+           console.log(searchUser)
+        });
+        
+    },
+    
+    addText() {
+      const dt = luxon.DateTime;
       console.log(this.newText);
       const newText = {
-        date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT),
+        date: dt.now().setLocale("it").toLocaleString(dt.DATETIME_SHORT),
         message: this.newText,
         status: "sent",
       };
-      
       this.contacts[this.activeIndex].messages.push(newText);
-        setTimeout(this.addSent,1000)
-      this.newText = '';
+      setTimeout(this.addSent, 1000);
+      this.newText = "";
     },
-    addSent(){
-        const dt = luxon.DateTime;
-        const answer = {        
-            date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT),
-            message: 'ciao, scusa ma chi sei?',
-            status: "received",
-        };      
-      this.contacts[this.activeIndex].messages.push(answer);      
-    }
+    addSent() {
+      const dt = luxon.DateTime;
+      const answer = {
+        date: dt.now().setLocale("it").toLocaleString(dt.DATETIME_SHORT),
+        message: "ciao, scusa ma chi sei?",
+        status: "received",
+      };
+      this.contacts[this.activeIndex].messages.push(answer);
+    },
   },
-}).mount('#app');
+}).mount("#app");

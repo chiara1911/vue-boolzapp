@@ -64,7 +64,9 @@
                 <input
                   type="text"
                   class="w-75 ps-2 m-1 border-black"
-                  placeholder="Cerca" v-model="searchText"
+                  @keyup="filterContacts"
+                  placeholder="Cerca"
+                 
                 />
               </div>
               <!-- contatti -->
@@ -72,9 +74,10 @@
                 <ul class="p-0">
                   <li
                     v-for="(user, index) in contacts"
-                    class="d-flex justify-content-between p-2 border-bottom" @click="getActive(index)"
+                    class="d-flex justify-content-between p-2 border-bottom"
+                    @click="getActive(index)"
                   >
-                    <div class="d-flex flex-row"  >
+                    <div class="d-flex flex-row">
                       <img
                         :src="user.avatar"
                         :alt="user.name"
@@ -82,11 +85,11 @@
                       />
                       <div class="d-flex flex-column ms-2">
                         <span class="align-items-center">{{user.name}}</span>
-                        <span class="text-grey">Ultimo messaggio</span>
+                        <span class="text-grey">{{user.messages[user.messages.length -1].message}}</span>
                       </div>
                     </div>
                     <div>
-                      <span class="text-grey extra-small">ore 12:00</span>
+                      <span class="text-grey extra-small">{{user.messages[user.messages.length -1].date}}</span>
                     </div>
                   </li>
                 </ul>
@@ -98,9 +101,9 @@
           <div class="col-12 col-md-8 p-0">
             <!-- header main content -->
             <div
-              class="header-main p-2 d-flex justify-content-between align-content-between "
+              class="header-main p-2 d-flex justify-content-between align-content-between"
             >
-              <div class="d-flex flex-row" @click="getActive(index)" >
+              <div class="d-flex flex-row" @click="getActive(index)">
                 <img
                   :src="contacts[activeIndex].avatar"
                   :alt="contacts[activeIndex].name"
@@ -108,8 +111,7 @@
                 />
                 <div class="d-flex flex-column">
                   <span>{{contacts[activeIndex].name}}</span>
-                  <span class="last-grey">ultimo accesso</span>
-                  
+                  <span class="last-grey">ultimo accesso {{contacts[activeIndex].messages[contacts[activeIndex].messages.length -1].date}}</span>
                 </div>
               </div>
               <div class="d-flex flex-row flex-nowrap p-2">
@@ -121,14 +123,17 @@
             <!-- main chat -->
             <div class="chat-main pt-3 flex-grow-1">
               <div class="container d-flex flex-column">
-            
-                <div class="d-flex justify-content-between" :class="msg.status" v-for ="(msg,index) in contacts[activeIndex].messages">
-                  <span class="align-content-start">{{msg.message}}</span> 
-                  <span class="last-grey align-content-end align-items-bottom extra-small" >{{msg.date}}</span>
+                <div
+                  class="d-flex justify-content-between"
+                  :class="msg.status"
+                  v-for="(msg,index) in contacts[activeIndex].messages"
+                >
+                  <span class="align-content-start">{{msg.message}}</span>
+                  <span
+                    class="last-grey align-content-end align-items-bottom extra-small"
+                    >{{msg.date}}</span
+                  >
                 </div>
-                
-                  
-               
               </div>
             </div>
             <!-- main footer -->
@@ -136,12 +141,20 @@
               class="footer-main header d-flex justify-content-between p-3 align-items-center"
             >
               <i class="fa-regular fa-face-smile py-1 px-3"></i>
-              <input name="text" value="" v-model ="newText"  @keyup.enter ="addText"
+              <input
+                name="text"
+                value=""
+                v-model="newText"
+                @keyup.enter="addText"
                 type="text"
                 class="border-0 w-75 p-2"
-                placeholder="Scrivi un messaggio"  
+                placeholder="Scrivi un messaggio"
               />
-              <i class="fa-regular fa-paper-plane" id="sending" @click="addText"></i>
+              <i
+                class="fa-regular fa-paper-plane"
+                id="sending"
+                @click="addText"
+              ></i>
 
               <i class="fa-solid fa-microphone py-1 px-3"></i>
             </div>
