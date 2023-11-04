@@ -179,29 +179,29 @@ createApp({
           ],
         },
       ],
-      
+
       activeIndex: 0,
-     newText:'',
-    
+      newText: '',
     };
   },
 
   methods: {
-    getActive(index){
-        return this.activeIndex=index 
+    getActive(index) {
+      return (this.activeIndex = index);
     },
-  
-  },
+    searchText() {},
+    addText() {
+        const dt = luxon.DateTime;
+      console.log(this.newText);
+      const newText = {
+        date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+        message: this.newText,
+        status: "sent",
+      };
+      this.contacts[this.activeIndex].messages.push(newText);
 
-  addText(){    
-
-    console.log(this.newText)
-    const newText = {
-        date: 12,
-        messages: this.newText,
-        status: "received",      
-    }
-    contacts[activeIndex].messages.push(newText)
-   this.newText =''
+      this.newText = '';
+    },
+    
   },
-}).mount("#app");
+}).mount('#app');
