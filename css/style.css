@@ -43,6 +43,7 @@ body{
 .chat-main{
     background-image: url(/img/mine.jpg);
     height: calc(100% - 140px);
+    overflow-y: auto;
 }
 
 li{

@@ -189,8 +189,8 @@ createApp({
     getActive(index) {
       return (this.activeIndex = index);
     },
-    searchText() {},
-    addText() {
+    searchText(){},
+    addText(){
         const dt = luxon.DateTime;
       console.log(this.newText);
       const newText = {
@@ -198,15 +198,16 @@ createApp({
         message: this.newText,
         status: "sent",
       };
+      
       this.contacts[this.activeIndex].messages.push(newText);
-setTimeout(this.addSent,1000)
+        setTimeout(this.addSent,1000)
       this.newText = '';
     },
     addSent(){
         const dt = luxon.DateTime;
         const answer = {        
             date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT),
-            message: 'ciao',
+            message: 'ciao, scusa ma chi sei?',
             status: "received",
         };      
       this.contacts[this.activeIndex].messages.push(answer);      

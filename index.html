@@ -98,7 +98,7 @@
           <div class="col-12 col-md-8 p-0">
             <!-- header main content -->
             <div
-              class="header-main p-2 d-flex justify-content-between align-content-between"
+              class="header-main p-2 d-flex justify-content-between align-content-between "
             >
               <div class="d-flex flex-row" @click="getActive(index)" >
                 <img
@@ -119,7 +119,7 @@
               </div>
             </div>
             <!-- main chat -->
-            <div class="chat-main pt-3 flex-grow-1 overflow-hidden">
+            <div class="chat-main pt-3 flex-grow-1">
               <div class="container d-flex flex-column">
             
                 <div class="d-flex justify-content-between" :class="msg.status" v-for ="(msg,index) in contacts[activeIndex].messages">
@@ -136,12 +136,12 @@
               class="footer-main header d-flex justify-content-between p-3 align-items-center"
             >
               <i class="fa-regular fa-face-smile py-1 px-3"></i>
-              <input name="text" value="" v-model ="newText"
+              <input name="text" value="" v-model ="newText"  @keyup.enter ="addText"
                 type="text"
                 class="border-0 w-75 p-2"
                 placeholder="Scrivi un messaggio"  
               />
-              <i class="fa-regular fa-paper-plane" id="sending" @click="addText" @keyup.enter></i>
+              <i class="fa-regular fa-paper-plane" id="sending" @click="addText"></i>
 
               <i class="fa-solid fa-microphone py-1 px-3"></i>
             </div>
