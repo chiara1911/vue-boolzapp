@@ -194,14 +194,22 @@ createApp({
         const dt = luxon.DateTime;
       console.log(this.newText);
       const newText = {
-        date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+        date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT),
         message: this.newText,
         status: "sent",
       };
       this.contacts[this.activeIndex].messages.push(newText);
-
+setTimeout(this.addSent,1000)
       this.newText = '';
     },
-    
+    addSent(){
+        const dt = luxon.DateTime;
+        const answer = {        
+            date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT),
+            message: 'ciao',
+            status: "received",
+        };      
+      this.contacts[this.activeIndex].messages.push(answer);      
+    }
   },
 }).mount('#app');
