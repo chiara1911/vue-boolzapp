@@ -71,23 +71,26 @@
               
               </div>
               <!-- contatti -->
-              <div class="col-12 d-flex flex-grow-1 d-md-block justify-content-between align-content-between" :class="{'d-none' : false}">
+              <div class="col-12 d-flex flex-grow-1 d-md-block " :class="{'d-none' : false}">
                 <ul class="p-0">
                   <li
                     v-for="(user, index) in contacts"
-                    class="d-flex  p-2 border-bottom justify-content-between align-content-between "
+                    class="d-flex flex-column p-2 border-bottom "
                     @click="getActive(index)" :key="user.id" :class="{'d-none' : user.visible === false}">
                   
-                    <div class="d-flex flex-row " v-if ="user.visible">                      
+                    <div  class="d-flex flex-row justify-content-between " v-if ="user.visible">   
+                         <div class="d-flex flex-row">              
                       <img :src="user.avatar" :alt="user.name" class="img-avatar" />                     
                       <div class="d-flex flex-column ms-2">
                         <span class="align-items-center">{{user.name}}</span>
                         <span class="text-grey">{{user.messages[user.messages.length
                           -1].message}}</span>                         
                       </div>
-                      <span class="text-grey extra-small align-items-end"
-                    >{{user.messages[user.messages.length -1].date}}</span>
-                    </div>                   
+                    </div>
+                      <span class="text-grey extra-small "
+                      >{{user.messages[user.messages.length -1].date}}</span>
+                    </div>
+                                   
                                      
                   </li>
                 </ul>
