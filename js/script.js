@@ -182,25 +182,58 @@ createApp({
 
       activeIndex: 0,
       newText: "",
+      textUser:"",
+      searchText :'',
+      showChat:true
     };
   },
 
   methods: {
+
+    filterY(){
+       
+        this.contacts.forEach(element => {
+            if (!element.name.toLowerCase().includes(this.searchText.toLowerCase())){
+                
+                element.visible= false;
+                console.log(element)
+            } else{
+                element.visible=true
+                console.log(element)
+            }
+        });
+    },
     getActive(index) {
       return (this.activeIndex = index);
     },
 
-    filterContacts(){
-        const searchUser = contacts.forEach(el => {
-           el= name.toLowerCase;
-           console.log(searchUser)
-        });
+    filterContacts() {
+      //   filterUsers= this.textUser;
+      tmp = [];
+      textUser="";
+      const filter = this.textUser.toLowerCase();
+      console.log("filtro " + filter);
+      this.contacts.forEach(element => {
+
+        if ( contacts.name.toString().startWith(filter)){
+           tmp.push(element);
+           console.log('tmp ' + tmp)
+        };
         
-    },
+       
+      });
+     
     
+    //   return contacts;
+      const searchUser = contacts.forEach(el => {
+        el.name.toLowerCase();
+        console.log(searchUser);
+     });
+    },
+
     addText() {
       const dt = luxon.DateTime;
-      console.log(this.newText);
+    
       const newText = {
         date: dt.now().setLocale("it").toLocaleString(dt.DATETIME_SHORT),
         message: this.newText,

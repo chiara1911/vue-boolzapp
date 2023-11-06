@@ -64,36 +64,34 @@
                 <input
                   type="text"
                   class="w-75 ps-2 m-1 border-black"
-                  @keyup="filterContacts"
-                  placeholder="Cerca"
                  
+                  @keyup="filterY"
+                  placeholder="Cerca" v-model.trim ="searchText"
                 />
+              
               </div>
               <!-- contatti -->
-              <div class="col-12 flex-grow-1">
+              <div class="col-12 d-flex flex-grow-1 d-md-block justify-content-between align-content-between" :class="{'d-none' : false}">
                 <ul class="p-0">
                   <li
                     v-for="(user, index) in contacts"
-                    class="d-flex justify-content-between p-2 border-bottom"
-                    @click="getActive(index)"
-                  >
-                    <div class="d-flex flex-row">
-                      <img
-                        :src="user.avatar"
-                        :alt="user.name"
-                        class="img-avatar"
-                      />
+                    class="d-flex  p-2 border-bottom justify-content-between align-content-between "
+                    @click="getActive(index)" :key="user.id" :class="{'d-none' : user.visible === false}">
+                  
+                    <div class="d-flex flex-row " v-if ="user.visible">                      
+                      <img :src="user.avatar" :alt="user.name" class="img-avatar" />                     
                       <div class="d-flex flex-column ms-2">
                         <span class="align-items-center">{{user.name}}</span>
-                        <span class="text-grey">{{user.messages[user.messages.length -1].message}}</span>
+                        <span class="text-grey">{{user.messages[user.messages.length
+                          -1].message}}</span>                         
                       </div>
-                    </div>
-                    <div>
-                      <span class="text-grey extra-small">{{user.messages[user.messages.length -1].date}}</span>
-                    </div>
+                      <span class="text-grey extra-small align-items-end"
+                    >{{user.messages[user.messages.length -1].date}}</span>
+                    </div>                   
+                                     
                   </li>
                 </ul>
-              </div>
+              </div> 
             </div>
           </div>
 
@@ -111,7 +109,11 @@
                 />
                 <div class="d-flex flex-column">
                   <span>{{contacts[activeIndex].name}}</span>
-                  <span class="last-grey">ultimo accesso {{contacts[activeIndex].messages[contacts[activeIndex].messages.length -1].date}}</span>
+                  <span class="last-grey"
+                    >ultimo accesso
+                    {{contacts[activeIndex].messages[contacts[activeIndex].messages.length
+                    -1].date}}</span
+                  >
                 </div>
               </div>
               <div class="d-flex flex-row flex-nowrap p-2">
@@ -126,7 +128,7 @@
                 <div
                   class="d-flex justify-content-between"
                   :class="msg.status"
-                  v-for="(msg,index) in contacts[activeIndex].messages"
+                  v-for="(msg,index) in contacts[activeIndex].messages" 
                 >
                   <span class="align-content-start">{{msg.message}}</span>
                   <span
@@ -142,8 +144,7 @@
             >
               <i class="fa-regular fa-face-smile py-1 px-3"></i>
               <input
-                name="text"
-                value=""
+                name="text"              
                 v-model="newText"
                 @keyup.enter="addText"
                 type="text"
